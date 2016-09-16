@@ -66,11 +66,14 @@ ifeq ($(HOST_OS),linux)
 endif
 
 BUILD_KERNEL := true
-include device/sony/common-headers/KernelHeaders.mk
--include device/sony/common-kernel/KernelConfig.mk
+
+TARGET_KERNEL_CONFIG := aosp_kanuti_tulip_defconfig
+TARGET_KERNEL_SOURCE := kernel/sony/kernel-test
+#include device/sony/common-headers/KernelHeaders.mk
+#-include device/sony/common-kernel/KernelConfig.mk
 
 # Include build helpers for QCOM proprietary
 -include vendor/qcom/proprietary/common/build/proprietary-build.mk
 
 # SELinux
-include device/sony/sepolicy/sepolicy.mk
+#include device/sony/sepolicy/sepolicy.mk
